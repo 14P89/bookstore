@@ -18,23 +18,28 @@ public class BasicDatabaseSave {
         Metadata metadata = new MetadataSources(ssr).getMetadataBuilder().build();
         SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
         Session session = sessionFactory.openSession();
+
         Transaction transaction = session.beginTransaction();
+//
+//        Book book1 = new Book();
+//        book1.setTitle("Hobbit");
+//        book1.setAuthor("J.R.R. Tolkien");
+//        book1.setReleaseYear(1968);
+//        book1.setNumberOfPages(287);
+//
+//        session.save(book1);
+//
+//        transaction.commit();
 
-        Employee employee = new Employee();
-        employee.setId(1);
-        employee.setName("Paweł");
-        employee.setSurname("Michałowski");
-        employee.setJobTitle("Programmer");
-        employee.setSalary(10000);
 
-        session.save(employee);
 
-        transaction.commit();
-
-        System.out.println("Employee save");
 
         session.close();
         sessionFactory.close();
 
     }
+
+
+
+
 }
